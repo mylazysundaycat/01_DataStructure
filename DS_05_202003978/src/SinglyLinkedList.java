@@ -46,6 +46,7 @@ public class SinglyLinkedList {
 		
 		Node result = null;
 		Node resultP = null;
+		
 		for(int i=0; i<num.length; i++) {
 			if(head==null) {
 				head = new Node(Integer.parseInt(num[i]),null);
@@ -66,27 +67,16 @@ public class SinglyLinkedList {
 	
 	void add(SinglyLinkedList otherNumber) {
 		String pointerNum = "";
-		
-		if(save_num=="") {
-			pointerNum = printnumber();	
-		} else {
-			pointerNum = save_num;
-		}
-		
+		pointerNum = printnumber();	
+
 		String otherNum = "";
-		if(otherNumber.save_num=="") {
-			otherNum = otherNumber.printnumber();	
-		} else {
-			otherNum = otherNumber.save_num;
-		}
-		
+		otherNum = otherNumber.printnumber();	
+
 		String[] num1 = pointerNum.split("");
 		String[] num2 = otherNum.split("");
 		String sum = "";
 		int sol = 0;
-		boolean plus = false;
-
-		
+	
 		int i = num1.length-1;
 		int j = num2.length-1;
 		
@@ -94,17 +84,10 @@ public class SinglyLinkedList {
 		int min = Math.min(i, j)+1;
 		
 		int carry = 0;
-		
-
-			
 
 		while(min>0) {
 			
-			if((Integer.parseInt(num1[i])+Integer.parseInt(num2[j])+carry)==10) {
-				sol = (Integer.parseInt(num1[i])+Integer.parseInt(num2[j]) + carry)%10;
-				sum += String.valueOf(sol);
-				carry = 1;
-			} else if((Integer.parseInt(num1[i])+Integer.parseInt(num2[j])+carry)>10) {
+			if((Integer.parseInt(num1[i])+Integer.parseInt(num2[j])+carry)>=10) {
 				sol = (Integer.parseInt(num1[i])+Integer.parseInt(num2[j]) + carry)%10;
 				sum += String.valueOf(sol);
 				carry = 1;				
@@ -125,11 +108,7 @@ public class SinglyLinkedList {
 		}
 		
 		while(max>0) {
-			if((Integer.parseInt(num1[i])+carry)==10) {
-				sol = (Integer.parseInt(num1[i])+ carry)%10;
-				sum += String.valueOf(sol);
-				carry = 1;
-			} else if((Integer.parseInt(num1[i])+carry)>10) {
+			if((Integer.parseInt(num1[i])+carry)>=10) {
 				sol = (Integer.parseInt(num1[i])+carry)%10;
 				sum += String.valueOf(sol);
 				carry = 1;				
@@ -158,25 +137,24 @@ public class SinglyLinkedList {
 	}
 	
 	String printnumber() {
-			if(head==null&&compare_num.equals(save_num.substring(0,compare_num.length()))) {
+		if(pointer==null&&compare_num.equals(save_num.substring(0,compare_num.length()))) {
 			save_num = save_num.substring(compare_num.length(),save_num.length());
-			head = pointer;
+			pointer = head;
 			StringBuffer sb = new StringBuffer(save_num);
 			
 			save_num = sb.reverse().toString();
 			compare_num = save_num;
 			
 			return save_num;
-		} else if(head==null) {
-			head = pointer;
+		} else if(pointer==null) {
+			pointer = head;
 			StringBuffer sb = new StringBuffer(save_num);
-			
 			save_num = sb.reverse().toString();
 			compare_num = save_num;
 			return save_num;
 		}
-		save_num += head.getData();
-		head = head.getNext();
+		save_num += pointer.getData();
+		pointer = pointer.getNext();
 		return printnumber();
 	}
 	
