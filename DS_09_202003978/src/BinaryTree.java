@@ -60,7 +60,6 @@ public class BinaryTree<Key extends Comparable<Key>> {
         if(n==null) return 0;
         else return (1+Math.max(height(n.getLeft()),height(n.getRight())));
     }
-
     //numleaves 재귀메소드 이용해서 풀이...
     public int numleaves(Node n) {
         if (n.getLeft() == null && n.getLeft() == null) return 1;
@@ -77,6 +76,7 @@ public class BinaryTree<Key extends Comparable<Key>> {
         }
 
     }
+
 
     public static boolean isEqual(Node n, Node m) {
         if(n==null || m==null) return n==m;
