@@ -1,4 +1,6 @@
+/*
 public class MainJava {
+
     public static void main(String[] args) {
         Node node1 = new Node(4,null,null);
         Node node2 = new Node(5,null,null);
@@ -23,3 +25,4 @@ public class MainJava {
     }
 }
 
+*/
