@@ -13,6 +13,7 @@ public class MainJava {
             String line = "";
             List<String> alines = new ArrayList<>();
 
+
             while((line=br.readLine())!=null){
                 alines.add(line);
             }
@@ -46,5 +47,11 @@ public class MainJava {
         } catch(IOException e) {
 
         }
+
+
+
+
+
+
     }
 }
