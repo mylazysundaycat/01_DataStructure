@@ -27,6 +27,9 @@
       <sourceFolder url="file://$MODULE_DIR$/CP_12_202003978/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CP_13_202003978/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CP_14_202003978/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DS_12_202003978/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DS_13_202003978/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
